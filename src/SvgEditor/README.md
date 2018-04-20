@@ -7,7 +7,8 @@ Eventually, it will likely become a full-fledged SVG creation tool.
 ## Project Conventions
 
 This project makes use of redux. All components connected to the store will
-begin with `Connected`.
+begin with `Connected` and will be adjacent to the corresponding presentation
+component.
 
 ## Editor Composition
 
@@ -15,7 +16,7 @@ The editor consists of 2 primary components.
 
 ### Preview Panel
 
-The preview shows the image, and will eventually include an svg (xml) output panel.
+The preview shows the image, and will eventually include an svg output panel.
 
 TODOS:
 
@@ -51,3 +52,25 @@ geared toward beginners. To accomplish that, it will need more features:
 * [ ] Add/edit Ellipse (`<ellipse>`) element
 * [ ] Add/edit Circle (`<circle>`) element
 * [ ] Add transformations to elements
+
+### Eventual Component Structure
+
+* SvgEditor
+
+  * PreviewPanel
+    * PreviewSettings
+    * PreviewHost
+      * SvgImagePreview
+      * SvgSourcePreview
+  * EditorPanel
+    * SvgElementList
+      * List Items being one of:
+        * SvgGroup
+          * Child being another SvgElementList, recursively with a limit
+        * SvgPath
+        * SvgEllipse
+        * SvgCircle
+    * CurrentElementPanel
+      * Child being one of:
+        * GroupDetails
+        * PathDetails
