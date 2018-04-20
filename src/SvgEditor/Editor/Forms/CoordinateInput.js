@@ -6,7 +6,7 @@ const Row = styled.div`
   justify-content: ${p => p.justify};
 
   input {
-    width: 30px;
+    width: 40px;
     margin: 0 6px;
   }
 `;

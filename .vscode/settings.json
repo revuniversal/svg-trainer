@@ -1,2 +1,5 @@
 {
+  "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
+  "flow.useLSP": true,
+  "javascript.validate.enable": false
 }

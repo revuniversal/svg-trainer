@@ -4,6 +4,11 @@ This was originally intended to be a 3-panel comic creation tool...
 Somehow I've conned myself into yak-shaving it into an SVG path creation tool.
 Eventually, it will likely become a full-fledged SVG creation tool.
 
+## Project Conventions
+
+This project makes use of redux. All components connected to the store will
+begin with `Connected`.
+
 ## Editor Composition
 
 The editor consists of 2 primary components.
@@ -26,9 +31,9 @@ Each operation can be edited, deleted or reordered.
 TODOS:
 
 * [x] Operation delete
-* [ ] Operation reorder
-* [ ] Edit Starting point
-* [ ] Toggle AutoClose
+* [x] Operation reorder
+* [x] Edit Starting point
+* [x] Toggle AutoClose
 * [ ] Edit stroke-width
 * [ ] Edit stroke
 * [ ] Edit fill
