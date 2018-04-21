@@ -46,7 +46,8 @@ understanding of SVGs. I think it could become useful to others who are trying
 to gain an understanding of SVGs.
 
 As such, I'd like to eventually turn it into a richer SVG composition tool,
-geared toward beginners. To accomplish that, it will need more features:
+geared toward learning SVG basics. To accomplish that, it will need more
+features:
 
 * [ ] Add/edit Group (`<g>`) element
 * [ ] Add/edit Ellipse (`<ellipse>`) element
@@ -56,7 +57,6 @@ geared toward beginners. To accomplish that, it will need more features:
 ### Eventual Component Structure
 
 * SvgEditor
-
   * PreviewPanel
     * PreviewSettings
     * PreviewHost
