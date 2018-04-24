@@ -9,9 +9,6 @@ function mapState(state) {
   };
 }
 
-/**
- *
- */
 const ConnectedPreview = props => <Preview {...props} />;
 
 export default connect(mapState, null)(ConnectedPreview);

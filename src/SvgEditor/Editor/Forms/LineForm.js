@@ -1,8 +1,8 @@
 /// @flow
 import React, { Component, Fragment } from 'react';
 import CoordinateInput from './CoordinateInput';
-import type { Line } from '../../../common/Commands';
-import type { Coordinate } from '../../../common/Coordinate';
+import type { Line } from '../../../types/Commands';
+import type { Coordinate } from '../../../types/Coordinate';
 
 interface Props {
   line: Line;

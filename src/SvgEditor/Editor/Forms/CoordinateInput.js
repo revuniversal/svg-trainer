@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+const Container = styled.div`
+  margin-right: 14px;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
 const Row = styled.div`
   display: flex;
-  justify-content: ${p => p.justify};
+  justify-content: flex-start;
+  margin-right: 0;
 
   input {
     width: 40px;
-    margin: 0 6px;
+    margin: 0;
+  }
+
+  label:not(first-child) {
+    margin-left: 4px;
   }
 `;
 
@@ -21,11 +33,11 @@ class CoordinateInput extends Component {
   render() {
     const { displayName, coordinate } = this.props;
     return (
-      <div>
-        <Row justify="left">
+      <Container>
+        <Row>
           <label>{displayName}</label>
         </Row>
-        <Row justify="center">
+        <Row>
           <div>
             <label>x</label>
             <input
@@ -43,7 +55,7 @@ class CoordinateInput extends Component {
             />
           </div>
         </Row>
-      </div>
+      </Container>
     );
   }
 }

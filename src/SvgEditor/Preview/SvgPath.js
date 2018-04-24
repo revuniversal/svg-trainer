@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import type { PathProps } from '../../common/PathProps';
-import type { Command, Curve, Line } from '../../common/Commands';
+import type { PathProps } from '../../types/PathProps';
+import type { Command, Curve, Line } from '../../types/Commands';
 
 function curveToData({ to, handle1: h1, handle2: h2 }: Curve) {
   return `c ${h1.x} ${h1.y} ${h2.x} ${h2.y} ${to.x} ${to.y}`;

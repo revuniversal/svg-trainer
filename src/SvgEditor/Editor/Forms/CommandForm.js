@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CurveForm from './CurveForm';
 import LineForm from './LineForm';
-import type { Command } from '../../../common/Commands';
+import type { Command } from '../../../types/Commands';
 
 const Container = styled.div`
   display: flex;
@@ -16,10 +16,13 @@ const Container = styled.div`
     border-bottom: 1px solid ${p => p.theme.panel.accent};
   }
 
-  div,
-  h3 {
-    margin-right: 14px;
-    flex-basis: 15%;
+  div {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 `;
 

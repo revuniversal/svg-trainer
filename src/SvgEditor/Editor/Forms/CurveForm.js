@@ -1,8 +1,8 @@
 // @flow
 import React, { Component, Fragment } from 'react';
 import CoordinateInput from './CoordinateInput';
-import type { Curve } from '../../../common/Commands';
-import type { Coordinate } from '../../../common/Coordinate';
+import type { Curve } from '../../../types/Commands';
+import type { Coordinate } from '../../../types/Coordinate';
 
 interface Props {
   curve: Curve;

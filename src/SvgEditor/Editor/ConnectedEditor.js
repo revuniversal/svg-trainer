@@ -15,15 +15,7 @@ function mapState({ currentPath }) {
 }
 
 function mapDispatch({ currentPath }) {
-  return {
-    addCurve: currentPath.addCurve,
-    addLine: currentPath.addLine,
-    editStart: currentPath.editStart,
-    editCommand: currentPath.editCommand,
-    deleteCommand: currentPath.deleteCommand,
-    sortCommandUp: currentPath.sortCommandUp,
-    sortCommandDown: currentPath.sortCommandDown
-  };
+  return currentPath;
 }
 
 const ConnectedEditor = props => <Editor {...props} />;

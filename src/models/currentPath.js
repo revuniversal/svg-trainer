@@ -1,21 +1,25 @@
 // @flow
-import type { Command } from '../common/Commands';
-import type { PathProps } from '../common/PathProps';
+import type { Command } from '../types/Commands';
+import type { Coordinate } from '../types/Coordinate';
+import type { Color } from '../types/Color';
+import type { PathProps } from '../types/PathProps';
 
 export type PathCommandName =
+  | 'editStart'
+  | 'editStroke'
+  | 'editFill'
+  | 'editStrokeWidth'
   | 'addCurve'
   | 'addLine'
-  | 'editStart'
   | 'editCommand'
   | 'deleteCommand'
   | 'sortCommandUp'
   | 'sortCommandDown';
-export type PathState = PathProps;
-export type PathAction = (state: PathState, payload?: any) => PathState;
-export type PathActions = { [PathCommandName]: Function };
+export type State = PathProps;
+export type Actions = { [PathCommandName]: Function };
 export type PathModel = {
-  state: PathState,
-  reducers: PathActions
+  state: State,
+  reducers: Actions
 };
 
 export type EditCommandPayload = {
@@ -33,7 +37,20 @@ const currentPath: PathModel = {
     autoClose: true
   },
   reducers: {
-    addCurve: function(state) {
+    editStart(state: State, { x, y }: Coordinate) {
+      let start = { x, y };
+      return { ...state, start };
+    },
+    editFill(state: State, fill: Color) {
+      return { ...state, fill };
+    },
+    editStroke(state: State, stroke: Color) {
+      return { ...state, stroke };
+    },
+    editStrokeWidth(state: State, strokeWidth: number) {
+      return { ...state, strokeWidth };
+    },
+    addCurve: function(state: State) {
       let commands = [...state.commands];
       commands.push({
         commandType: 'CURVE',
@@ -52,10 +69,6 @@ const currentPath: PathModel = {
       });
 
       return { ...state, commands };
-    },
-    editStart(state, newStart) {
-      let start = { ...newStart };
-      return { ...state, start };
     },
     editCommand(state, { index, command }: EditCommandPayload) {
       let commands = [...state.commands];
